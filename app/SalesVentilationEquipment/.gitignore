@@ -1,0 +1,6 @@
+/.vs/*
+*.dll
+*.cache
+*.bin
+*.vsidx
+*-lock.json

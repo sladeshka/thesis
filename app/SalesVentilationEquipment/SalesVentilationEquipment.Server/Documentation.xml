@@ -1,0 +1,628 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SalesVentilationEquipment.Server</name>
+    </assembly>
+    <members>
+        <member name="T:SalesVentilationEquipment.Server.Controllers.CartsController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SalesVentilationEquipment.Server.Migrations.Init">
+            <inheritdoc />
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:SalesVentilationEquipment.Server.Models.BaseModel">
+            <summary>
+            Basic service model
+            </summary>
+        </member>
+        <member name="T:SalesVentilationEquipment.Server.Models.ContractorAndStore">
+            <summary>
+            Utility class for implementing many between the сontractor and the store
+            </summary>
+        </member>
+        <member name="T:SalesVentilationEquipment.Server.Repositories.Repository`1">
+            <summary>
+            Universal class for working with data in a database
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.#ctor(SalesVentilationEquipment.Server.Data.ApplicationDbContext,Microsoft.Extensions.Logging.ILogger{`0})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context">DB context</param>
+            <param name="logger">Logging class</param>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.GetContext">
+            <summary>
+            Returns the database context
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.Clean">
+            <summary>
+            Clears selected settings
+            </summary>
+            <returns>Self</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.Include(System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Related Objects
+            </summary>
+            <param name="includes">Object name</param>
+            <returns>Self</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.Filter(System.Collections.Generic.Dictionary{System.String,System.Func{`0,System.Boolean}})">
+            <summary>
+            Filter by value
+            </summary>
+            <param name="filters">Value</param>
+            <returns>Self</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.OrderBy``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean)">
+            <summary>
+            Sorts by field
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <param name="keySelector">Field</param>
+            <param name="ascending">Sort direction</param>
+            <returns>Self</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.Limit(System.Int32)">
+            <summary>
+            Limit on the number of items returned
+            </summary>
+            <param name="count">Limit</param>
+            <returns>Self</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.GetAsync">
+            <summary>
+            Returns a list of objects
+            </summary>
+            <returns>List of objects</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.GetFirstAsync">
+            <summary>
+            Returns the first object found
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.GetByIdAsync(System.Object)">
+            <summary>
+            Returns an object by its ID
+            </summary>
+            <param name="id">Object ID</param>
+            <returns>Object</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.AddAsync(`0)">
+            <summary>
+            Adds an object in the database
+            </summary>
+            <param name="model">Object</param>
+            <returns>Object</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.AddListAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Adds a list of objects in the database
+            </summary>
+            <param name="models">List of objects</param>
+            <returns>List of objects</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.UpdateAsync(`0)">
+            <summary>
+            Updates an object in the database
+            </summary>
+            <param name="model">Object</param>
+            <returns>Object</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.UpdateListAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Updates a list of objects in the database
+            </summary>
+            <param name="models">List of objects</param>
+            <returns>List of objects</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.AddOrUpdateListAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Adds or updates a list of objects in the database
+            </summary>
+            <param name="models">List of objects</param>
+            <returns>List of objects</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.RemoveAsync(System.Object)">
+            <summary>
+            Removes an object by id from the database
+            </summary>
+            <param name="id">Object ID</param>
+            <returns>Object</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.RemoveListAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Removes a list of objects from the database
+            </summary>
+            <param name="models">List of objects</param>
+            <returns>List of objects</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.SaveAsync">
+            <summary>
+            Saves changes to the database
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Repositories.Repository`1.GetKey``1(``0)">
+            <summary>
+            Primary Key Determination Method
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity">Object type</param>
+            <returns>Key</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.CartService.#ctor(SalesVentilationEquipment.Server.Data.ApplicationDbContext,Microsoft.Extensions.Logging.ILogger{SalesVentilationEquipment.Server.Models.Cart})">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">DB context</param>
+            <param name="logger">Logging class</param>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.CartService.Get">
+            <summary>
+            Returns a response as a list of carts depending on the conditions.
+            </summary>
+            <returns>List of carts</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.CartService.Add(SalesVentilationEquipment.Server.Requests.CartRequest)">
+            <summary>
+            Adds a cart.
+            </summary>
+            <param name="data">Cart data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.CartService.GetById(System.Object)">
+            <summary>
+            Returns the cart by its ID.
+            </summary>
+            <param name="id">Cart ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.CartService.Update(System.Object,SalesVentilationEquipment.Server.Requests.CartRequest)">
+            <summary>
+            Updates a cart by its ID.
+            </summary>
+            <param name="id">Cart ID</param>
+            <param name="data">Cart data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.CartService.Delete(System.Object)">
+            <summary>
+            Deletes a cart by its ID.
+            </summary>
+            <param name="id">Cart ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.CartService.ThrowExceptionIfNull(System.Object,System.String)">
+            <summary>
+            Checks whether an object exists and if it is NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.CartService.ThrowExceptionIfNotNull(System.Object,System.String)">
+            <summary>
+            Checks whether the object exists and if it is not NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.CartService.SetResponse(SalesVentilationEquipment.Server.Models.Cart)">
+            <summary>
+            Generates a response object.
+            </summary>
+            <param name="element">Cart object</param>
+            <returns>Cart response object</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ContractorService.#ctor(SalesVentilationEquipment.Server.Data.ApplicationDbContext,Microsoft.Extensions.Logging.ILogger{SalesVentilationEquipment.Server.Models.Contractor})">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">DB context</param>
+            <param name="logger">Logging class</param>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ContractorService.Get">
+            <summary>
+            Returns a response as a list of contractors depending on the conditions.
+            </summary>
+            <returns>List of contractors</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ContractorService.Add(SalesVentilationEquipment.Server.Requests.ContractorRequest)">
+            <summary>
+            Adds a contractor.
+            </summary>
+            <param name="data">Contractor data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ContractorService.GetById(System.Object)">
+            <summary>
+            Returns the contractor by its ID.
+            </summary>
+            <param name="id">Contractor ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ContractorService.Update(System.Object,SalesVentilationEquipment.Server.Requests.ContractorRequest)">
+            <summary>
+            Updates a contractor by its ID.
+            </summary>
+            <param name="id">Contractor ID</param>
+            <param name="data">Contractor data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ContractorService.Delete(System.Object)">
+            <summary>
+            Deletes a contractor by its ID.
+            </summary>
+            <param name="id">Contractor ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ContractorService.ThrowExceptionIfNull(System.Object,System.String)">
+            <summary>
+            Checks whether an object exists and if it is NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ContractorService.ThrowExceptionIfNotNull(System.Object,System.String)">
+            <summary>
+            Checks whether the object exists and if it is not NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ContractorService.SetResponse(SalesVentilationEquipment.Server.Models.Contractor)">
+            <summary>
+            Generates a response object.
+            </summary>
+            <param name="element">Contractor object</param>
+            <returns>Contractor response object</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.OrderService.#ctor(SalesVentilationEquipment.Server.Data.ApplicationDbContext,Microsoft.Extensions.Logging.ILogger{SalesVentilationEquipment.Server.Models.Order})">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">DB context</param>
+            <param name="logger">Logging class</param>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.OrderService.Get">
+            <summary>
+            Returns a response as a list of orders depending on the conditions.
+            </summary>
+            <returns>List of orders</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.OrderService.Add(SalesVentilationEquipment.Server.Requests.OrderRequest)">
+            <summary>
+            Adds a order.
+            </summary>
+            <param name="data">Order data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.OrderService.GetById(System.Object)">
+            <summary>
+            Returns the order by its ID.
+            </summary>
+            <param name="id">Order ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.OrderService.Update(System.Object,SalesVentilationEquipment.Server.Requests.OrderRequest)">
+            <summary>
+            Updates a order by its ID.
+            </summary>
+            <param name="id">Order ID</param>
+            <param name="data">Order data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.OrderService.Delete(System.Object)">
+            <summary>
+            Deletes a order by its ID.
+            </summary>
+            <param name="id">Order ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.OrderService.ThrowExceptionIfNull(System.Object,System.String)">
+            <summary>
+            Checks whether an object exists and if it is NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.OrderService.ThrowExceptionIfNotNull(System.Object,System.String)">
+            <summary>
+            Checks whether the object exists and if it is not NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.OrderService.SetResponse(SalesVentilationEquipment.Server.Models.Order)">
+            <summary>
+            Generates a response object.
+            </summary>
+            <param name="element">Order object</param>
+            <returns>Order response object</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductInCartService.#ctor(SalesVentilationEquipment.Server.Data.ApplicationDbContext,Microsoft.Extensions.Logging.ILogger{SalesVentilationEquipment.Server.Models.ProductInCart},Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">DB context</param>
+            <param name="logger">Logging class</param>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductInCartService.Get">
+            <summary>
+            Returns a response as a list of carts depending on the conditions.
+            </summary>
+            <returns>List of carts</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductInCartService.Add(System.Guid,SalesVentilationEquipment.Server.Requests.ProductInCartRequest)">
+            <summary>
+            Adds a cart.
+            </summary>
+            <param name="cartId"></param>
+            <param name="data">Cart data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductInCartService.GetById(System.Object)">
+            <summary>
+            Returns the cart by its ID.
+            </summary>
+            <param name="id">Cart ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductInCartService.Update(System.Guid,System.Guid,SalesVentilationEquipment.Server.Requests.ProductInCartRequest)">
+            <summary>
+            Updates a cart by its ID.
+            </summary>
+            <param name="id">Cart ID</param>
+            <param name="data">Cart data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductInCartService.Delete(System.Object)">
+            <summary>
+            Deletes a cart by its ID.
+            </summary>
+            <param name="id">Cart ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductInCartService.ThrowExceptionIfNull(System.Object,System.String)">
+            <summary>
+            Checks whether an object exists and if it is NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductInCartService.ThrowExceptionIfNotNull(System.Object,System.String)">
+            <summary>
+            Checks whether the object exists and if it is not NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductInCartService.SetResponse(SalesVentilationEquipment.Server.Models.ProductInCart)">
+            <summary>
+            Generates a response object.
+            </summary>
+            <param name="element">Cart object</param>
+            <returns>Cart response object</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductService.#ctor(SalesVentilationEquipment.Server.Data.ApplicationDbContext,Microsoft.Extensions.Logging.ILogger{SalesVentilationEquipment.Server.Models.Product})">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">DB context</param>
+            <param name="logger">Logging class</param>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductService.Get">
+            <summary>
+            Returns a response as a list of products depending on the conditions.
+            </summary>
+            <returns>List of products</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductService.Add(SalesVentilationEquipment.Server.Requests.ProductRequest)">
+            <summary>
+            Adds a product.
+            </summary>
+            <param name="data">Product data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductService.GetById(System.Object)">
+            <summary>
+            Returns the product by its ID.
+            </summary>
+            <param name="id">Product ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductService.Update(System.Object,SalesVentilationEquipment.Server.Requests.ProductRequest)">
+            <summary>
+            Updates a product by its ID.
+            </summary>
+            <param name="id">Product ID</param>
+            <param name="data">Product data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductService.Delete(System.Object)">
+            <summary>
+            Deletes a product by its ID.
+            </summary>
+            <param name="id">Product ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductService.ThrowExceptionIfNull(System.Object,System.String)">
+            <summary>
+            Checks whether an object exists and if it is NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductService.ThrowExceptionIfNotNull(System.Object,System.String)">
+            <summary>
+            Checks whether the object exists and if it is not NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.ProductService.SetResponse(SalesVentilationEquipment.Server.Models.Product)">
+            <summary>
+            Generates a response object.
+            </summary>
+            <param name="element">Product object</param>
+            <returns>Product response object</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.StoreService.#ctor(SalesVentilationEquipment.Server.Data.ApplicationDbContext,Microsoft.Extensions.Logging.ILogger{SalesVentilationEquipment.Server.Models.Store})">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">DB context</param>
+            <param name="logger">Logging class</param>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.StoreService.Get">
+            <summary>
+            Returns a response as a list of stores depending on the conditions.
+            </summary>
+            <returns>List of stores</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.StoreService.Add(SalesVentilationEquipment.Server.Requests.StoreRequest)">
+            <summary>
+            Adds a store.
+            </summary>
+            <param name="data">Store data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.StoreService.GetById(System.Object)">
+            <summary>
+            Returns the store by its ID.
+            </summary>
+            <param name="id">Store ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.StoreService.Update(System.Object,SalesVentilationEquipment.Server.Requests.StoreRequest)">
+            <summary>
+            Updates a store by its ID.
+            </summary>
+            <param name="id">Store ID</param>
+            <param name="data">Store data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.StoreService.Delete(System.Object)">
+            <summary>
+            Deletes a store by its ID.
+            </summary>
+            <param name="id">Store ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.StoreService.ThrowExceptionIfNull(System.Object,System.String)">
+            <summary>
+            Checks whether an object exists and if it is NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.StoreService.ThrowExceptionIfNotNull(System.Object,System.String)">
+            <summary>
+            Checks whether the object exists and if it is not NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.StoreService.SetResponse(SalesVentilationEquipment.Server.Models.Store)">
+            <summary>
+            Generates a response object.
+            </summary>
+            <param name="element">Store object</param>
+            <returns>Store response object</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.WarehouseService.#ctor(SalesVentilationEquipment.Server.Data.ApplicationDbContext,Microsoft.Extensions.Logging.ILogger{SalesVentilationEquipment.Server.Models.Warehouse})">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="context">DB context</param>
+            <param name="logger">Logging class</param>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.WarehouseService.Get">
+            <summary>
+            Returns a response as a list of carts depending on the conditions.
+            </summary>
+            <returns>List of carts</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.WarehouseService.Add(SalesVentilationEquipment.Server.Requests.WarehouseRequest)">
+            <summary>
+            Adds a cart.
+            </summary>
+            <param name="data">Warehouse data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.WarehouseService.GetById(System.Object)">
+            <summary>
+            Returns the cart by its ID.
+            </summary>
+            <param name="id">Warehouse ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.WarehouseService.Update(System.Object,SalesVentilationEquipment.Server.Requests.WarehouseRequest)">
+            <summary>
+            Updates a cart by its ID.
+            </summary>
+            <param name="id">Warehouse ID</param>
+            <param name="data">Warehouse data</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.WarehouseService.Delete(System.Object)">
+            <summary>
+            Deletes a cart by its ID.
+            </summary>
+            <param name="id">Warehouse ID</param>
+            <returns>Query result</returns>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.WarehouseService.ThrowExceptionIfNull(System.Object,System.String)">
+            <summary>
+            Checks whether an object exists and if it is NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.WarehouseService.ThrowExceptionIfNotNull(System.Object,System.String)">
+            <summary>
+            Checks whether the object exists and if it is not NULL throws an exception.
+            </summary>
+            <param name="value">Object</param>
+            <param name="fieldName">Object name</param>
+            <exception cref="T:SalesVentilationEquipment.Server.Exceptions.UnprocessableEntityException">Throws a 422 exception in response</exception>
+        </member>
+        <member name="M:SalesVentilationEquipment.Server.Services.WarehouseService.SetResponse(SalesVentilationEquipment.Server.Models.Warehouse)">
+            <summary>
+            Generates a response object.
+            </summary>
+            <param name="element">Warehouse object</param>
+            <returns>Warehouse response object</returns>
+        </member>
+    </members>
+</doc>

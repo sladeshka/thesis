@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesVentilationEquipment.Server", "SalesVentilationEquipment.Server\SalesVentilationEquipment.Server.csproj", "{26FDE8A0-25CA-4E6D-8797-DD63F8F6CE61}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "salesventilationequipment.client", "salesventilationequipment.client\salesventilationequipment.client.esproj", "{63C361FE-9432-4953-A307-C2D97E179E62}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26FDE8A0-25CA-4E6D-8797-DD63F8F6CE61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26FDE8A0-25CA-4E6D-8797-DD63F8F6CE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26FDE8A0-25CA-4E6D-8797-DD63F8F6CE61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26FDE8A0-25CA-4E6D-8797-DD63F8F6CE61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63C361FE-9432-4953-A307-C2D97E179E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63C361FE-9432-4953-A307-C2D97E179E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63C361FE-9432-4953-A307-C2D97E179E62}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{63C361FE-9432-4953-A307-C2D97E179E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63C361FE-9432-4953-A307-C2D97E179E62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63C361FE-9432-4953-A307-C2D97E179E62}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE275BC6-B41D-49FE-AF39-FE42F71FC6BA}
+	EndGlobalSection
+EndGlobal

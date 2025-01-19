@@ -1,0 +1,85 @@
+version: '3.3'
+
+services:
+  app_main:
+    container_name: ${COMPOSE_PROJECT_NAME}_app_main
+    build:
+      context: ../../
+      dockerfile: ./docker/local/app_main/Dockerfile
+      args:
+        DEFAULT_CONNECTION: Include Error Detail=true;User ID=${DB_MAIN_USERNAME:-thesis};Password=${DB_MAIN_PASSWORD:-password};Minimum Pool Size=50;Maximum Pool Size=1000;Host=${DB_MAIN_HOST:-db_main};Port=${DB_MAIN_PORT:-5462};Database=${DB_MAIN_DATABASE:-thesis};
+    volumes:
+      - ../../app/SalesVentilationEquipment/:/app/
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - DEFAULT_CONNECTION=Include Error Detail=true;User ID=${DB_MAIN_USERNAME:-thesis};Password=${DB_MAIN_PASSWORD:-password};Minimum Pool Size=50;Maximum Pool Size=1000;Host=${DB_MAIN_HOST:-db_main};Port=${DB_MAIN_PORT:-5462};Database=${DB_MAIN_DATABASE:-thesis};
+    ports:
+      - ${APP_MAIN_PORT:-8110}:8080
+    env_file:
+      - .env
+    restart: always
+    depends_on:
+      - db_main
+
+  app_auth:
+    container_name: ${COMPOSE_PROJECT_NAME}_app_auth
+    build:
+      context: ../../
+      dockerfile: ./docker/local/app_auth/Dockerfile
+    volumes:
+      - ../../app/AuthForVentilationEquipment/:/app/
+    ports:
+      - ${APP_AUTH_PORT:-8111}:8080
+    env_file:
+      - .env
+    restart: always
+    depends_on:
+      - db_auth
+
+  app_cdn:
+    container_name: ${COMPOSE_PROJECT_NAME}_app_cdn
+    build:
+      context: ../../
+      dockerfile: ./docker/local/app_cdn/Dockerfile
+    volumes:
+      - ../../app/CdnForVentilationEquipment/:/app/
+    ports:
+      - ${APP_AUTH_PORT:-8112}:8080
+    env_file:
+      - .env
+    restart: always
+
+  db_main:
+    container_name: ${COMPOSE_PROJECT_NAME}_db_main
+    image: 'postgres:16'
+    build:
+      context: .
+      dockerfile: ./db/Dockerfile
+    volumes:
+      - ./db/:/db
+    environment:
+      PGPASSWORD: ${DB_MAIN_PASSWORD:-password}
+      POSTGRES_DB: ${DB_MAIN_DATABASE:-thesis}
+      POSTGRES_USER: ${DB_MAIN_USERNAME:-thesis}
+      POSTGRES_PASSWORD: ${DB_MAIN_PASSWORD:-password}
+    ports:
+      - ${DB_MAIN_PORT:-5462}:5432
+    restart: always
+
+  db_auth:
+    container_name: ${COMPOSE_PROJECT_NAME}_db_auth
+    image: 'postgres:16'
+    build:
+      context: .
+      dockerfile: ./db/Dockerfile
+    volumes:
+      - ./db/:/db
+    environment:
+      PGPASSWORD: ${DB_AUTH_PASSWORD:-password}
+      POSTGRES_DB: ${DB_AUTH_DATABASE:-thesis}
+      POSTGRES_USER: ${DB_AUTH_USERNAME:-thesis}
+      POSTGRES_PASSWORD: ${DB_AUTH_PASSWORD:-password}
+    ports:
+      - ${DB_AUTH_PORT:-5463}:5432
+    restart: always

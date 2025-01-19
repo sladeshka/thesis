@@ -1,0 +1,60 @@
+@import './base.css';
+
+body {
+    background-color: rgba(249, 247, 242, 1);
+    color: rgba(214, 154, 107, 1);
+    font-family: 'Arial', sans-serif;
+}
+
+.item {
+    border: 1px solid rgba(226, 214, 196, 1);
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    color: rgba(214, 154, 107, 1);
+}
+
+.item-price span {
+    font-size: 1.5em;
+    color: rgba(214, 154, 107, 1);
+}
+
+button {
+    border: unset;
+    border-radius: 3px;
+    background-color: rgba(255, 160, 122, 1);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.3em;
+}
+
+button:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+
+#app {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(214, 154, 107, 1);
+    transition: 0.4s;
+    padding: 3px;
+}
+
+@media (hover: hover) {
+    a:hover {
+        text-decoration: underline;
+        color: rgba(214, 154, 107, 0.8);
+    }
+}

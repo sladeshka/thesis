@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="DTO - Класс - модель данных не содержащая какого-либо поведения">
+    <Position X="0.5" Y="0.5" Height="0.366" Width="8.33" />
+  </Comment>
+  <Comment CommentText="Services - Классы для реализации бизнес логики">
+    <Position X="0.5" Y="9.172" Height="0.366" Width="8.314" />
+  </Comment>
+  <Comment CommentText="Repositories - Классы для реализации взаимодействия с разыми источниками данных">
+    <Position X="0.5" Y="17.75" Height="0.366" Width="8.425" />
+  </Comment>
+  <Class Name="SalesVentilationEquipment.Server.Models.Cart" HideInheritanceLine="true">
+    <Position X="2.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAEAAAAAAAAJAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\Cart.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Contractor" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Models.Contractor" HideInheritanceLine="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Contractor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Models.ContractorAndStore" HideInheritanceLine="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <AssociationLine Name="Contractor" Type="SalesVentilationEquipment.Server.Models.Contractor">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.943" Y="0.414" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAEAAAEAAAAIAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Models\ContractorAndStore.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Contractor" />
+      <Property Name="Store" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Models.Order" HideInheritanceLine="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <AssociationLine Name="Contractor" Type="SalesVentilationEquipment.Server.Models.Contractor">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.911" Y="0.456" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAACAAAAEAAAAAAAAIAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Contractor" />
+      <Property Name="Cart" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Models.Product" HideInheritanceLine="true">
+    <Position X="5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAgAAAAAAAAAAQAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Models\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Models.ProductInCart" HideInheritanceLine="true">
+    <Position X="2.75" Y="3.75" Width="1.5" />
+    <AssociationLine Name="Cart" Type="SalesVentilationEquipment.Server.Models.Cart">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.567" Y="0.341" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>MAACAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAACAA=</HashCode>
+      <FileName>Models\ProductInCart.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cart" />
+      <Property Name="Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Models.Remains" HideInheritanceLine="true">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <AssociationLine Name="Warehouse" Type="SalesVentilationEquipment.Server.Models.Warehouse">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.058" Y="0.362" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAACAAAABAAAAAAAAAAAAAAAAAAAAAAACAAAgAAAAAA=</HashCode>
+      <FileName>Models\Remains.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product" />
+      <Property Name="Warehouse" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Models.Store" HideInheritanceLine="true">
+    <Position X="2.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Store.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Models.Warehouse" HideInheritanceLine="true">
+    <Position X="7.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Warehouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Services.ProductInCartService">
+    <Position X="2.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAABAIABAAARAAAAAAAADIAEAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Services\ProductInCartService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Services.ProductService">
+    <Position X="5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAABAAABAAARAAAAAAAABIAEAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Services\ProductService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Repositories.Repository&lt;T&gt;">
+    <Position X="0.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAQQAAAEABEAAAAgICQUAIJAABAgAACKAICAAYAA=</HashCode>
+      <FileName>Repositories\Repository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Models.StoreAndWarehouse" HideInheritanceLine="true">
+    <Position X="5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAABAAAAAAAAAAAEAAAAAAAAAAACAAAAQAAAAA=</HashCode>
+      <FileName>Models\StoreAndWarehouse.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Warehouse" />
+      <Property Name="Store" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Services.ContractorService">
+    <Position X="7.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAABAAABAAARAAAAAAAABIAEAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Services\ContractorService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Services.CartService">
+    <Position X="0.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAABAAABAAARAAAAAAAABIAEAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Services\CartService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Services.OrderService">
+    <Position X="0.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAABAAABAAARAAAAAAAABIAEAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Services\OrderService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Services.StoreService">
+    <Position X="2.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAABAAABAAARAAAAAAAABIAEAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Services\StoreService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesVentilationEquipment.Server.Services.WarehouseService">
+    <Position X="5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAABAAABAAARAAAAAAAABIAEAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Services\WarehouseService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
